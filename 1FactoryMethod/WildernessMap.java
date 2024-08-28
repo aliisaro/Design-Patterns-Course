@@ -1,14 +1,14 @@
 import java.util.Random;
 
+//WildernessMap class generates a map with swamp, water, and forest tiles
 public class WildernessMap extends Map {
-
     public WildernessMap(int width, int height) {
         super(width, height);
         generateMap();
     }
 
-    @Override
-    protected Tile createTile() {
+    //Factory method to create random tiles for a wilderness map
+    public Tile createTile() {
         Random random = new Random();
         int tileType = random.nextInt(3);
         switch (tileType) {

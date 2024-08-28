@@ -1,8 +1,10 @@
+//Interface defining what each tile should do
 public interface Tile {
     char getCharacter();
     String getType();
 }
 
+// Concrete classes implementing the Tile interface
 class SwampTile implements Tile {
     @Override
     public char getCharacter() {
