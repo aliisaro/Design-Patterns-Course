@@ -1,3 +1,5 @@
+package Task1FactoryMethod;
+
 //Abstract class defining the common behavior for all maps
 public abstract class Map {
     protected Tile[][] tiles; //2D array to store tiles

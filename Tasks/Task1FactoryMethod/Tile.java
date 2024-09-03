@@ -1,10 +1,12 @@
+package Task1FactoryMethod;
+
 //Interface defining what each tile should do
 public interface Tile {
     char getCharacter();
     String getType();
 }
 
-// Concrete classes implementing the Tile interface
+// Concrete classes implementing the FactoryMethod1.Tile interface
 class SwampTile implements Tile {
     @Override
     public char getCharacter() {

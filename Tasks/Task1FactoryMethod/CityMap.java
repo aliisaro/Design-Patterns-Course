@@ -1,6 +1,8 @@
+package Task1FactoryMethod;
+
 import java.util.Random;
 
-//CityMap class generates a map with road, forest, and building tiles
+//FactoryMethod1.CityMap class generates a map with road, forest, and building tiles
 public class CityMap extends Map {
     public CityMap(int width, int height) {
         super(width, height);

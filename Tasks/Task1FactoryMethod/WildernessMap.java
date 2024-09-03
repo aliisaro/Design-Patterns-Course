@@ -1,6 +1,8 @@
+package Task1FactoryMethod;
+
 import java.util.Random;
 
-//WildernessMap class generates a map with swamp, water, and forest tiles
+//FactoryMethod1.WildernessMap class generates a map with swamp, water, and forest tiles
 public class WildernessMap extends Map {
     public WildernessMap(int width, int height) {
         super(width, height);
