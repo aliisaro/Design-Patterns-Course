@@ -1,6 +1,6 @@
-package Task2AbstractMethod.ConcreteClassesB;
+package Task2AbstractFactory.ConcreteClassesB;
 
-import Task2AbstractMethod.AbstractClasses.CheckBox;
+import Task2AbstractFactory.AbstractClasses.CheckBox;
 
 public class CheckBoxB extends CheckBox {
     @Override

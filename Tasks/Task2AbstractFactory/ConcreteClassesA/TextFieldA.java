@@ -1,6 +1,6 @@
-package Task2AbstractMethod.ConcreteClassesA;
+package Task2AbstractFactory.ConcreteClassesA;
 
-import Task2AbstractMethod.AbstractClasses.TextField;
+import Task2AbstractFactory.AbstractClasses.TextField;
 
 public class TextFieldA extends TextField {
     @Override

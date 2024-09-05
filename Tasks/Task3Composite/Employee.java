@@ -1,4 +1,4 @@
-package Task3CompositeMethod;
+package Task3Composite;
 
 // Represents an individual employee
 public class Employee extends Component {

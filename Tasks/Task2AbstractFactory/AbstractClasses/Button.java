@@ -1,7 +1,6 @@
-package Task2AbstractMethod.AbstractClasses;
+package Task2AbstractFactory.AbstractClasses;
 
-
-public abstract class CheckBox {
+public abstract class Button {
     protected String text;
     public abstract void display();
 

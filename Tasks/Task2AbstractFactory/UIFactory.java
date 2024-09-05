@@ -1,8 +1,8 @@
-package Task2AbstractMethod;
+package Task2AbstractFactory;
 
-import Task2AbstractMethod.AbstractClasses.Button;
-import Task2AbstractMethod.AbstractClasses.CheckBox;
-import Task2AbstractMethod.AbstractClasses.TextField;
+import Task2AbstractFactory.AbstractClasses.Button;
+import Task2AbstractFactory.AbstractClasses.CheckBox;
+import Task2AbstractFactory.AbstractClasses.TextField;
 
 public abstract class UIFactory {
     // Abstract methods for creating UI elements

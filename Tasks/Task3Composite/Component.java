@@ -1,4 +1,4 @@
-package Task3CompositeMethod;
+package Task3Composite;
 
 //Abstract class for both Departments and Employees.
 public abstract class Component {

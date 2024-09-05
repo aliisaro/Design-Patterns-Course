@@ -1,4 +1,4 @@
-package Task3CompositeMethod;
+package Task3Composite;
 
 public class Main {
     public static void main(String[] args) {

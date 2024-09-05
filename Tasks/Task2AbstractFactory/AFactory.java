@@ -1,11 +1,11 @@
-package Task2AbstractMethod;
+package Task2AbstractFactory;
 
-import Task2AbstractMethod.AbstractClasses.Button;
-import Task2AbstractMethod.AbstractClasses.CheckBox;
-import Task2AbstractMethod.AbstractClasses.TextField;
-import Task2AbstractMethod.ConcreteClassesA.ButtonA;
-import Task2AbstractMethod.ConcreteClassesA.CheckBoxA;
-import Task2AbstractMethod.ConcreteClassesA.TextFieldA;
+import Task2AbstractFactory.AbstractClasses.Button;
+import Task2AbstractFactory.AbstractClasses.CheckBox;
+import Task2AbstractFactory.AbstractClasses.TextField;
+import Task2AbstractFactory.ConcreteClassesA.ButtonA;
+import Task2AbstractFactory.ConcreteClassesA.CheckBoxA;
+import Task2AbstractFactory.ConcreteClassesA.TextFieldA;
 
 public class AFactory extends UIFactory {
     @Override

@@ -1,4 +1,4 @@
-package Task3CompositeMethod;
+package Task3Composite;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package Task2AbstractMethod.ConcreteClassesB;
+package Task2AbstractFactory.ConcreteClassesB;
 
-import Task2AbstractMethod.AbstractClasses.Button;
+import Task2AbstractFactory.AbstractClasses.Button;
 
 public class ButtonB extends Button {
     @Override
