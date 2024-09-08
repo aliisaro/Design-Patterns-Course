@@ -5,57 +5,48 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Logger {
-    private static Logger instance;
-    private BufferedWriter writer;
+    private static Logger instance; // used for singleton pattern
+    private BufferedWriter writer; // for file operations
     private String fileName;
 
-    // Private constructor to prevent instantiation
-    private Logger() {
-        // Default log file name
-        this.fileName = "default_log.txt";
-
+    // constructor
+    private Logger(){
+        fileName = "defaultName.txt"; //initialize logger with default file name
         try {
-            this.writer = new BufferedWriter(new FileWriter(fileName, true));
+            writer = new BufferedWriter(new FileWriter(fileName, true)); // true for append mode
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    // Public method to provide access to the singleton instance
-    public static Logger getInstance() {
-        if (instance == null) {
-            synchronized (Logger.class) {
-                if (instance == null) {
-                    instance = new Logger();
-                }
-            }
+    public static Logger getInstance(){
+        if (instance == null) { //if there is no instance, create new instance
+            instance = new Logger();
         }
         return instance;
     }
 
-    // Method to write a log message to the file
-    public void write(String message) {
+    public void setFileName(String newFileName){
+        try {
+            if (writer != null) { //close current file if it's open
+                writer.close();
+            }
+            fileName = newFileName;
+            writer = new BufferedWriter(new FileWriter(fileName, true)); // Open new file in append mode
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void write(String message){
         try {
             writer.write(message);
-            writer.newLine();
-            writer.flush(); // Ensure the message is written to the file
+            writer.newLine(); // Move to the next line
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    // Method to change the log file name
-    public void setFileName(String fileName) {
-        try {
-            writer.close(); // Close the current file writer
-            this.fileName = fileName;
-            this.writer = new BufferedWriter(new FileWriter(fileName, true)); // Open a new file writer
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Method to close the file writer
     public void close() {
         try {
             if (writer != null) {

@@ -30,7 +30,6 @@ public class GameCharacter {
     }
 
     public void train() {
-
         level.train(this);
     }
 
