@@ -1,4 +1,4 @@
-package Task6State;
+package Task7State;
 
 // State interface
 public interface Level {

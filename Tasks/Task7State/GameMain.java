@@ -1,4 +1,4 @@
-package Task6State;
+package Task7State;
 import java.util.Scanner;
 public class GameMain {
     public static void main(String[] args) {

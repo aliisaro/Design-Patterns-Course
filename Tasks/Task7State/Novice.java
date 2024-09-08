@@ -1,4 +1,4 @@
-package Task6State;
+package Task7State;
 
 // Concrete state class: Novice
 public class Novice implements Level {

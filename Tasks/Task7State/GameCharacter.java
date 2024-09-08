@@ -1,4 +1,4 @@
-package Task6State;
+package Task7State;
 
 // This class maintains the current state (level).
 public class GameCharacter {
