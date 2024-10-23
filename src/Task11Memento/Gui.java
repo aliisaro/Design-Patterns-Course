@@ -1,14 +1,15 @@
 package Task11Memento;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.geometry.Insets;
-import javafx.scene.input.KeyCode;
 
 public class Gui extends Application {
 
@@ -35,6 +36,10 @@ public class Gui extends Application {
         checkBox = new CheckBox("Click me!");
         checkBox.setPadding(insets);
 
+        //new code: history button
+        Button historyButton = new Button("Show History");
+        historyButton.setOnAction(event -> new HistoryWindow(controller));
+
         // Add the ColorBoxes and CheckBox to a HBox
         HBox hBox = new HBox(colorBox1.getRectangle(), colorBox2.getRectangle(), colorBox3.getRectangle());
         hBox.setSpacing(10);
@@ -43,12 +48,15 @@ public class Gui extends Application {
         hBox.setMargin(colorBox2.getRectangle(), insets);
         hBox.setMargin(colorBox3.getRectangle(), insets);
 
+        Label label1 = new Label("Press Ctrl-Z to undo the last change.");
+        label1.setPadding(insets);
 
-        Label label = new Label("Press Ctrl-Z to undo the last change.");
-        label.setPadding(insets);
+        //new code: label for redo
+        Label label2 = new Label("Press Ctrl-Y to undo the last change.");
+        label2.setPadding(insets);
 
         // create a VBox that contains the HBox and the CheckBox
-        VBox vBox = new VBox(hBox, checkBox, label);
+        VBox vBox = new VBox(hBox, checkBox, historyButton, label1, label2);
         // call controller when the CheckBox is clicked
         checkBox.setOnAction(event -> {
             controller.setIsSelected(checkBox.isSelected());
@@ -56,14 +64,18 @@ public class Gui extends Application {
 
         // Set the HBox to be the root of the Scene
         Scene scene = new Scene(vBox);
+        //new code
         scene.setOnKeyPressed(event -> {
-            if (event.isControlDown() && event.getCode() == KeyCode.Z) {
-                // Ctrl-Z: undo
-                System.out.println("Undo key combination pressed");
-                controller.undo();
+            if (event.isControlDown()) {
+                if (event.getCode() == KeyCode.Z) { // Ctrl-Z: undo
+                    System.out.println("Undo key combination pressed");
+                    controller.undo();
+                } else if (event.getCode() == KeyCode.Y) { // Ctrl-Y: redo
+                    System.out.println("Redo key combination pressed");
+                    controller.redo();
+                }
             }
         });
-
 
         stage.setScene(scene);
         stage.setTitle("Memento Pattern Example");
