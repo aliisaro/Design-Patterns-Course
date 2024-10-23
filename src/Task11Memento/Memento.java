@@ -7,6 +7,7 @@ public class Memento implements IMemento {
     private int[] options;
     private boolean isSelected;
     private final String savedTime; //new code: store the time when the memento was created
+
     public Memento(int[] options, boolean isSelected) {
         this.options = options.clone(); // Copy options array
         this.isSelected = isSelected;
@@ -22,7 +23,7 @@ public class Memento implements IMemento {
         return isSelected;
     }
 
-    //new code
+    //new code: Implement the IMemento interface methods to retrieve the time and description of the memento
     @Override
     public String getSavedTime() {
         return savedTime; // Return the saved time

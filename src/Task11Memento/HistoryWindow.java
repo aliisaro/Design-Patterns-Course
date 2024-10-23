@@ -4,8 +4,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.util.List;
+
+// Class to display the history of the application
+// The Controller is passed to the constructor to allow the HistoryWindow to access the history
 
 public class HistoryWindow {
     private final Controller controller;
@@ -31,13 +33,12 @@ public class HistoryWindow {
             int selectedIndex = listView.getSelectionModel().getSelectedIndex();
             if (selectedIndex >= 0) {
                 IMemento selectedMemento = history.get(selectedIndex);
-                controller.restoreState(selectedMemento); // Ensure this method is available
+                controller.restoreState(selectedMemento);
             }
         });
 
-
         VBox vbox = new VBox(listView);
-        Scene scene = new Scene(vbox, 300, 400);
+        Scene scene = new Scene(vbox, 500, 400);
         historyStage.setScene(scene);
         historyStage.setTitle("History");
         historyStage.show();
