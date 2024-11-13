@@ -5,32 +5,32 @@ public class OfficeComputerBuilder implements ComputerBuilder {
     private Computer computer;
 
     public OfficeComputerBuilder() {
-        computer = new Computer("", 0, 0, "", "");
+        computer = new Computer("", "", "", "", "");
     }
 
     @Override
-    public void buildProcessor() {
-        computer.setProcessor("Intel Core i5-10400F");
+    public void buildProcessor(String grade) {
+        computer.setProcessor(grade);
     }
 
     @Override
-    public void buildRAM() {
-        computer.setRAM(16);
+    public void buildRAM(String RAM) {
+        computer.setRAM(RAM);
     }
 
     @Override
-    public void buildHardDrive() {
-        computer.setHardDrive(500);
+    public void buildHardDrive(String hardDrive) {
+        computer.setHardDrive(hardDrive);
     }
 
     @Override
-    public void buildGraphicsCard() {
-        computer.setGraphicsCard("Intel UHD Graphics 630");
+    public void buildGraphicsCard(String model) {
+        computer.setGraphicsCard(model);
     }
 
     @Override
-    public void buildSystem() {
-        computer.setSystem("Windows 10");
+    public void buildSystem(String system) {
+        computer.setSystem(system);
     }
 
     @Override

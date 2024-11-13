@@ -1,0 +1,30 @@
+.Label {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+    -fx-margin-bottom: 0.5em;
+}
+
+.combobox {
+    -fx-font-size: 1em;
+    -fx-margin-bottom: 1em;
+    -fx-pref-width: 300;
+}
+
+.Input {
+    -fx-font-size: 1em;
+    -fx-margin-bottom: 1em;
+}
+
+.Button {
+    -fx-font-size: 1em;
+    -fx-padding: 0.5em 1em;
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-border: none;
+    -fx-border-radius: 0.25em;
+    -fx-cursor: hand;
+}
+
+.Button:hover {
+    -fx-background-color: #0056b3;
+}
