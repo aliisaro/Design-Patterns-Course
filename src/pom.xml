@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>Desing-Patterns-Course</artifactId>
+    <artifactId>Design-Patterns-Course</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,11 +13,29 @@
     </properties>
 
     <dependencies>
-        <!-- Add your JavaFX dependency here -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>20.0.2</version>
+            <classifier>win</classifier> <!-- Use "mac" for macOS, "linux" for Linux -->
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>20.0.2</version>
+            <classifier>win</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>20.0.2</version>
+            <classifier>win</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>20.0.2</version>
+            <classifier>win</classifier>
         </dependency>
     </dependencies>
 </project>
