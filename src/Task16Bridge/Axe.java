@@ -4,14 +4,17 @@ package Task16Bridge;
 
 public class Axe implements Weapon {
     private final Enchantment enchantment;
+    private final Blessing blessing;
 
-    public Axe(Enchantment enchantment) {
+    public Axe(Enchantment enchantment, Blessing blessing) {
         this.enchantment = enchantment;
+        this.blessing = blessing;
     }
 
     @Override
     public void wield() {
         System.out.println("The axe is wielded.");
+        blessing.bestow();
         enchantment.onActivate();
     }
 
@@ -30,5 +33,9 @@ public class Axe implements Weapon {
     @Override
     public Enchantment getEnchantment() {
         return enchantment;
+    }
+    @Override
+    public Blessing getBlessing() {
+        return blessing;
     }
 }
