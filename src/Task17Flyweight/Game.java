@@ -1,44 +1,44 @@
 package Task17Flyweight;
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Game extends Application {
+    private static final int CANVAS_WIDTH = 500;
+    private static final int CANVAS_HEIGHT = 500;
+
     @Override
     public void start(Stage primaryStage) {
-        // UI components
-        Label title = new Label("Game");
+        TileGraphicFactory tileGraphicFactory = new TileGraphicFactory();
 
-        VBox layout = new VBox(10, title);
+        // Create a canvas
+        Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        // Set up padding and spacing
-        layout.setPadding(new Insets(10));
-        layout.setAlignment(Pos.CENTER);
-        layout.setSpacing(10);
+        // Set the background color to green
+        gc.setFill(Color.GREEN);
+        gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-        // Generate and display maps
-        Map cityMap = new CityMap(5, 5);
-        System.out.println("City Map:");
-        cityMap.display();
+        // Create and render the map
+        Map cityMap = new CityMap(15, 15);
+        cityMap.render(gc, tileGraphicFactory);
 
-        Map wildernessMap = new WildernessMap(10, 10);
-        System.out.println("\nWilderness Map:");
-        wildernessMap.display();
+        // Uncomment the following lines to render the Wilderness Map instead
+        // Map wildernessMap = new WildernessMap(15, 15);
+        //wildernessMap.render(gc, tileGraphicFactory);
 
-        // Create the scene and show the stage
-        Scene scene = new Scene(layout, 400, 650);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Map Generator");
+        StackPane root = new StackPane(canvas);
+        primaryStage.setScene(new Scene(root, CANVAS_WIDTH, CANVAS_HEIGHT));
+        primaryStage.setTitle("RPG Map Renderer");
         primaryStage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(Game.class, args); // Proper way to launch JavaFX
+        launch(args);
     }
 }
-
