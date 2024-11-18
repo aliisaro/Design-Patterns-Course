@@ -19,8 +19,8 @@ import javafx.stage.Stage;
 public class Game extends Application {
     private static final int MAP_WIDTH = 15;  // Number of tiles in the map (width)
     private static final int MAP_HEIGHT = 15; // Number of tiles in the map (height)
-    private static final int WINDOW_WIDTH = 800;  // Initial window width
-    private static final int WINDOW_HEIGHT = 800; // Initial window height
+    private static final int WINDOW_WIDTH = 500;  // Initial window width
+    private static final int WINDOW_HEIGHT = 500; // Initial window height
 
     @Override
     public void start(Stage primaryStage) {
@@ -41,8 +41,8 @@ public class Game extends Application {
         cityMap.render(gc, tileWidth, tileHeight);
 
         // uncomment to render wilderness map instead
-        // Map wildernessMap = new WildernessMap(MAP_WIDTH, MAP_HEIGHT);
-        // wildernessMap.render(gc, tileWidth, tileHeight);
+        //Map wildernessMap = new WildernessMap(MAP_WIDTH, MAP_HEIGHT);
+        //wildernessMap.render(gc, tileWidth, tileHeight);
 
         // Set up the scene and stage
         StackPane root = new StackPane(canvas);
