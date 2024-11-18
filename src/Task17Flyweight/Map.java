@@ -2,21 +2,21 @@ package Task17Flyweight;
 
 import javafx.scene.canvas.GraphicsContext;
 
+// Represents a grid of tiles, renders them using shared graphics.
 public abstract class Map {
-    protected Tile[][] tiles; // 2D array to store tiles
-    protected int width;
-    protected int height;
+    protected Tile[][] tiles;
+    protected int width, height;
 
-    // Constructor to initialize map size
     public Map(int width, int height) {
         this.width = width;
         this.height = height;
-        tiles = new Tile[width][height]; // Initialize the 2D array
+        tiles = new Tile[width][height];
     }
 
-    protected abstract Tile createTile(); // Abstract factory method for creating tiles
+    // Abstract method to create tiles, implemented by subclasses.
+    protected abstract Tile createTile();
 
-    // Method to generate the map by filling it with random tiles
+    // Fills the map with tiles.
     public void generateMap() {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
@@ -25,14 +25,12 @@ public abstract class Map {
         }
     }
 
-    // Render method with tile dimensions
-    public void render(GraphicsContext gc, TileGraphicFactory factory) {
-        double tileWidth = 32; // Set tile width
-        double tileHeight = 32; // Set tile height
-
+    // Draws the map on the canvas.
+    public void render(GraphicsContext gc, double tileWidth, double tileHeight) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 Tile tile = tiles[i][j];
+                // Draw each tile at the calculated position
                 tile.draw(gc, i * tileWidth, j * tileHeight, tileWidth, tileHeight);
             }
         }

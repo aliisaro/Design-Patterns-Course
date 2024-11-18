@@ -2,18 +2,17 @@ package Task17Flyweight;
 
 import java.util.Random;
 
-//FactoryMethod1.CityMap class generates a map with road, forest, and building tiles
+// A map with road, forest, and building tiles.
 public class CityMap extends Map {
     public CityMap(int width, int height) {
         super(width, height);
         generateMap();
     }
 
-    //Factory method to create random tiles for a city map
+    // Randomly creates city tiles.
     public Tile createTile() {
         Random random = new Random();
-        int tileType = random.nextInt(3);
-        switch (tileType) {
+        switch (random.nextInt(3)) {
             case 0: return new RoadTile();
             case 1: return new ForestTile();
             case 2: return new BuildingTile();

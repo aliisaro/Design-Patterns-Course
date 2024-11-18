@@ -2,18 +2,17 @@ package Task17Flyweight;
 
 import java.util.Random;
 
-//FactoryMethod1.WildernessMap class generates a map with swamp, water, and forest tiles
+// A map with swamp, water, and forest tiles.
 public class WildernessMap extends Map {
     public WildernessMap(int width, int height) {
         super(width, height);
         generateMap();
     }
 
-    //Factory method to create random tiles for a wilderness map
+    // Randomly creates wilderness tiles.
     public Tile createTile() {
         Random random = new Random();
-        int tileType = random.nextInt(3);
-        switch (tileType) {
+        switch (random.nextInt(3)) {
             case 0: return new SwampTile();
             case 1: return new WaterTile();
             case 2: return new ForestTile();
