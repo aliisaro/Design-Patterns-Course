@@ -3,6 +3,7 @@ module DesignPatterns {
     requires javafx.graphics;
     requires java.sql;
 
+    exports Task19Mediator to javafx.graphics;
     exports Task11Memento to javafx.graphics;
     exports Task14Builder to javafx.graphics;
     exports Task17Flyweight to javafx.graphics;
