@@ -32,6 +32,10 @@ public class Recommendation {
         this.targetAudience = targetAudience;
     }
 
+    public String getTargetAudience() {
+        return targetAudience;
+    }
+
     public List<Book> getRecommendedBooks() {
         return recommendedBooks;
     }

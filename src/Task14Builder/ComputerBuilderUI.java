@@ -108,6 +108,7 @@ public class ComputerBuilderUI extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Custom Computer Builder");
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {

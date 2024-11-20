@@ -1,7 +1,10 @@
-module Task17Flyweight {
+module DesignPatterns {
     requires javafx.controls;
     requires javafx.graphics;
     requires java.sql;
 
-    exports Task17Flyweight;
+    exports Task11Memento to javafx.graphics;
+    exports Task14Builder to javafx.graphics;
+    exports Task17Flyweight to javafx.graphics;
+    exports Task18Prototype to javafx.graphics;
 }
