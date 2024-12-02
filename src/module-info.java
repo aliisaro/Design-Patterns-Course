@@ -2,6 +2,7 @@ module DesignPatterns {
     requires javafx.controls;
     requires javafx.graphics;
     requires java.sql;
+    requires com.google.gson;
 
     exports Task19Mediator to javafx.graphics;
     exports Task11Memento to javafx.graphics;
