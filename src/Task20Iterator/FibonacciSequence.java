@@ -2,10 +2,16 @@ package Task20Iterator;
 
 import java.util.Iterator;
 
-// Sequence for creating Fibonacci iterators.
+// Creates an iterator for generating Fibonacci numbers.
 public class FibonacciSequence implements Sequence {
+  private final int length;
+
+  public FibonacciSequence(int length) {
+    this.length = length;
+  }
+
   @Override
   public Iterator<Integer> iterator() {
-    return new FibonacciIterator(10); // Default to 10 numbers or -1 for infinite
+    return new FibonacciIterator(length);
   }
 }
