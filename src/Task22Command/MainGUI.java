@@ -20,7 +20,7 @@ public class MainGUI extends Application {
   public void start(Stage primaryStage) {
     VBox root = new VBox();
     GridPane gridPane = createGrid();
-    Button generateCodeButton = new Button("Generate Code");
+    Button generateCodeButton = new Button("Create Code");
 
     // Handle the Generate Code button
     generateCodeButton.setOnAction(event -> {
