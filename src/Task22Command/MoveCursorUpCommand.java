@@ -1,17 +1,16 @@
 package Task22Command;
 
-public class MoveCursorUpCommand implements Command{
-  private Cursor cursor; // Reference to the cursor
+public class MoveCursorUpCommand implements Command {
+  private final MainGUI gui;
 
-  // Constructor to accept the cursor object
-  public MoveCursorUpCommand(Cursor cursor) {
-    this.cursor = cursor;
+  public MoveCursorUpCommand(MainGUI gui) {
+    this.gui = gui;
   }
 
   @Override
   public void execute() {
-    if (cursor.getY() > 0) { // Ensure cursor doesn't move out of bounds
-      cursor.setY(cursor.getY() - 1); // Move the cursor up
+    if (gui.getCursorY() > 0) {
+      gui.setCursorY(gui.getCursorY() - 1);
     }
   }
 }

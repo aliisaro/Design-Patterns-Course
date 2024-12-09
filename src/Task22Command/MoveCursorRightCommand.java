@@ -1,16 +1,16 @@
 package Task22Command;
 
 public class MoveCursorRightCommand implements Command {
-  private Cursor cursor; // Reference to the cursor
+  private final MainGUI gui;
 
-  public MoveCursorRightCommand(Cursor cursor) {
-    this.cursor = cursor;
+  public MoveCursorRightCommand(MainGUI gui) {
+    this.gui = gui;
   }
 
   @Override
   public void execute() {
-    if (cursor.getX() < 7) { // Ensure cursor doesn't move out of bounds
-      cursor.setX(cursor.getX() + 1); // Move the cursor right
+    if (gui.getCursorX() < gui.getGridSize() - 1) {
+      gui.setCursorX(gui.getCursorX() + 1);
     }
   }
 }

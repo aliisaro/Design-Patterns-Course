@@ -1,18 +1,18 @@
 package Task22Command;
 
 public class TogglePixelCommand implements Command {
-  private final Cursor cursor;
-  private final boolean[][] grid;
+  private final MainGUI gui;
 
-  public TogglePixelCommand(Cursor cursor, boolean[][] grid) {
-    this.cursor = cursor;
-    this.grid = grid;
+  public TogglePixelCommand(MainGUI gui) {
+    this.gui = gui;
   }
 
   @Override
   public void execute() {
-    int x = cursor.getX();
-    int y = cursor.getY();
-    grid[y][x] = !grid[y][x]; // Toggle the pixel state
+    int x = gui.getCursorX();
+    int y = gui.getCursorY();
+    boolean[][] grid = gui.getGrid();
+
+    grid[y][x] = !grid[y][x];
   }
 }
